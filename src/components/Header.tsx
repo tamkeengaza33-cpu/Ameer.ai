@@ -29,6 +29,7 @@ export default function Header({ activeTab, setActiveTab, onCvClick }: HeaderPro
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -39,6 +40,7 @@ export default function Header({ activeTab, setActiveTab, onCvClick }: HeaderPro
       setIsOpen(false);
       return;
     }
+
     setActiveTab(id);
     window.location.hash = id;
     setIsOpen(false);
@@ -49,13 +51,12 @@ export default function Header({ activeTab, setActiveTab, onCvClick }: HeaderPro
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-neutral-950/80 border-b border-border-dark/80 py-4 backdrop-blur-md shadow-lg'
+          ? 'bg-neutral-950/80 border-b border-border-dark/80 py-3.5 backdrop-blur-md shadow-lg'
           : 'bg-transparent py-6'
       }`}
       dir="rtl"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        
         {/* Logo and branding */}
         <Logo className="cursor-pointer" onClick={() => handleNavClick('home')} />
 
@@ -76,7 +77,6 @@ export default function Header({ activeTab, setActiveTab, onCvClick }: HeaderPro
           ))}
         </nav>
 
-
         {/* Mobile menu trigger */}
         <div className="flex lg:hidden">
           <button
@@ -86,7 +86,6 @@ export default function Header({ activeTab, setActiveTab, onCvClick }: HeaderPro
             {isOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
-
       </div>
 
       {/* Mobile Navigation Drawer */}
@@ -104,9 +103,12 @@ export default function Header({ activeTab, setActiveTab, onCvClick }: HeaderPro
                 }`}
               >
                 <span>{item.label}</span>
-                <span className="text-xs text-neutral-600 font-mono">0{navItems.indexOf(item) + 1}</span>
+                <span className="text-xs text-neutral-600 font-mono">
+                  0{navItems.indexOf(item) + 1}
+                </span>
               </button>
             ))}
+
             <button
               onClick={() => handleNavClick('contact')}
               className="mt-3 flex w-full items-center justify-center gap-2 rounded-xl bg-brand py-3 text-sm font-bold text-black shadow-md hover:bg-brand-dark cursor-pointer"
