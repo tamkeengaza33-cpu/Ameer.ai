@@ -1,34 +1,20 @@
-# AMEER Creative Portfolio
+<div align="center">
+<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
+</div>
 
-A professional portfolio website for advertising, AI design, video production, branding, and creative campaigns.
+# Run and deploy your AI Studio app
 
-## Project Goal
+This contains everything you need to run your app locally.
 
-This project is a simple personal portfolio website that can be published using GitHub Pages.
+View your app in AI Studio: https://ai.studio/apps/00d30992-e81a-4e3d-87c2-ce9bfa815e7a
 
-## Sections
+## Run Locally
 
-- Hero section
-- Services
-- Projects
-- About
-- Contact
+**Prerequisites:**  Node.js
 
-## Files
 
-- `index.html` — main website structure
-- `style.css` — visual design and responsive layout
-- `script.js` — simple interactive effects
-- `images/` — place your images and project thumbnails here
-
-## How to Use
-
-1. Create a new GitHub repository.
-2. Upload all files from this folder.
-3. Go to Settings > Pages.
-4. Choose the `main` branch.
-5. Save and wait for the live website link.
-
-## Contact
-
-tamkeengaza33@gmail.com
+1. Install dependencies:
+   `npm install`
+2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+3. Run the app:
+   `npm run dev`
